@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Translation//EN">
+<HEAD><TITLE>JSP Test</TITLE>
+<script language="JavaScript" src="menu2.js">
+</script>
+<link rel="stylesheet" type="text/css" href="menu2.css" media="all"/>
+</HEAD>
+<BODY BGCOLOR=#b0b0ff onMouseDown="HideMenus()">
+<div style="background-color:Silver;position:absolute;top:0;left:0;height:70"  >
+<table  id="tbl3" offsetTop=0 border="0" cellpadding="0" >
+<tr>
+   <td class ="top_menu_items_s" ID="menu-file" width="100" bgcolor="Silver" onMouseDown="MenuInit('menu-file','file');"
+      onMouseOver="Menu('menu-file','file');" >
+     File
+   </td>
+   <td class ="top_menu_items_s" ID="menu-game" width="100" bgcolor="Silver" onMouseDown="MenuInit('menu-game','game');"
+      onMouseOver="Menu('menu-game','game');" >
+     Game
+   </td>
+   <td class ="top_menu_items_s" ID="menu-preferences" width="100" bgcolor="Silver"
+      onMouseOver="Menu('menu-preferences','preferences');"  onMouseDown="MenuInit('menu-preferences','preferences');" >
+      Preferences
+   </td>
+</tr>
+</table>
+</div>
+
+<div ID="file" class ="menu_frame_s" style="visibility: hidden"> 
+  <table width="100%" style="cellpadding="4";cellspacing="0">
+  <tr> <td width="100%" ID="p1" 
+     onMouseOver="Highlight('file','p1');"
+     onMouseOut="UnHighlight('file','p1');"
+     onMouseDown="alert('not implemented');EraseAll(0)">
+     Open...</td></tr>
+  <tr> <td width="100%" ID="p2"
+     onMouseOver="Highlight('file','p2');"
+     onMouseOut="UnHighlight('file','p2');">
+     Save...</td></tr>
+  </table>
+</div>
+
+<div ID="game" class ="menu_frame_s" STYLE="visibility: hidden">
+  <table width="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr> <td width="100%" ID="s1"
+     onMouseOver="Highlight('game','s1');"
+     onMouseOut="UnHighlight('game','s1');">
+     Start Game</td></tr>
+  <tr> <td width="100%" ID="s2"
+     onMouseOver="subMenu('game','s2','rack');"
+     onMouseOut="UnHighlight('game','s2');">
+     Play Tile</td></tr>
+  <tr> <td width="100%" ID="s4"
+     onMouseOver="subMenu('game','s4','rack2');"
+     onMouseOut="UnHighlight('game','s4');">
+     exx</td></tr>
+  <tr> <td width="100%" ID="s5"
+     onMouseOver="Highlight('game','s5');"
+     onMouseOut="UnHighlight('game','s5');">
+     yyy</td></tr>
+  </table>
+</div>
+
+<div ID="preferences" class ="menu_frame_s" STYLE="visibility: hidden">
+  <table width="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr> <td width="100%" ID="c1"
+     onMouseOver="Highlight('preferences','c1');"
+     onMouseOut="UnHighlight('preferences','c1');">
+     Set Timeout</td></tr>
+  </table>
+</div>
+
+<div ID="rack" class ="menu_frame_s" STYLE="visibility: hidden">
+  <table width="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr> <td width="100%" ID="r1"
+     onMouseOver="Highlight('rack','r1');"
+     onMouseOut="UnHighlight('rack','r1');">
+     1-A</td></tr>
+  <tr> <td width="100%" ID="r2"
+     onMouseOver="Highlight('rack','r2');"
+     onMouseOut="UnHighlight('rack','r2');">
+     2-C</td></tr>
+  </table>
+</div>
+<div ID="rack2" class ="menu_frame_s" STYLE="visibility: hidden">
+  <table width="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr> <td width="100%" ID="r12"
+     onMouseOver="Highlight('rack2','r12');"
+     onMouseOut="UnHighlight('rack2','r12');">
+     5-A</td></tr>
+  <tr> <td width="100%" ID="r22"
+     onMouseOver="Highlight('rack2','r22');"
+     onMouseOut="UnHighlight('rack2','r22');">
+     4-C</td></tr>
+  </table>
+</div>
+
+
+<H1>
+<br><br><br>
+        Type:<INPUT ID="hhh" size=300 TYPE="TEXT" NAME="inmsg" VALUE = ""  >
+</H1>
+</body>
+</html>
+
