@@ -12,7 +12,7 @@ http://www.moreservlets.com/.
 -->
 <HTML>
 <HEAD>
-  <TITLE>Order Form</TITLE>
+  <TITLE>Acquire</TITLE>
 <script language="JavaScript">
 function sub() {
     if (!document.getElementById) return;
