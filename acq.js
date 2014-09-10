@@ -148,49 +148,28 @@ var gamestate="6";
 function getGameState(){
   return gamestate;
 }
-function parseStates(str)
+function parseStates(obj)
 {
 
-    h=document.getElementById("hack");
-  states =str.split("~");
-        for(i=0;i<states.length;i++){
-    //alert(states[i]);
-        } 
-        val=states[0].split(":");
-        gamestate=val[1];
-        val=states[1].split(":");
-        if(val.length>1){
-      tileState=val[1];
-  }else{
-      tileState="";
-        }
+  h=document.getElementById("hack");
+    
+  gamestate= obj.state;
+       
+  tileState=obj.board;
 
-        val=states[2].split(":");
-        rack=val[1];
-        var h = document.getElementById("hack");
-        h.value=rack;
+  rack=obj.tile;
+  var h = document.getElementById("hack");
+  h.value=rack;
 
-        val=states[3].split(":");
-        stats=val[1];
+  stats= obj.stats;
 
-        val=states[4].split(":");
-        txt=val[1];
+  txt= obj.msg;
+  arg= obj.arg;
 
-        val=states[5].split(":");
-        if(val.length>1){
-      arg=val[1];
-  }else{
-      arg="";
-        }
+  chat= obj.chat;
 
-        val=states[6].split("|");
-        if(val.length>1){
-      chat=val[1];
-  }else{
-      chat="";
-        }
 
-        setState2( txt,tileState,stats,rack,arg,gamestate,chat);
+  setState2( txt,tileState,stats,rack,arg,gamestate,chat);
 }
 var rand=8;
 
@@ -201,14 +180,16 @@ function asyncCom() {
       data: { command:2},
       cache: false,
       url: "game" ,
-      dataType: "text",
+      dataType: "json",
       error: function(request,error) 
       {
+
+        debugger;
           timeID=setTimeout(asyncCom,1000);
       },
       success: function ( str)
       {
-       
+       debugger;
         parseStates(str);
         asyncCom();
       }});
